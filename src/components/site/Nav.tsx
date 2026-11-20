@@ -29,7 +29,7 @@ import {
 } from "@/data/trips";
 
 // ──────────────────────────────────────────────────────────
-// PEAK CATEGORIES (Image 3 Reference: 6000m - 8848m & Multiple)
+// PEAK CATEGORIES (6000m - 8848m & Multiple Peaks)
 // ──────────────────────────────────────────────────────────
 export interface PeakItem {
   name: string;
@@ -37,6 +37,7 @@ export interface PeakItem {
   days: string;
   slug: string;
   highlight: string;
+  image: string;
 }
 
 export const PEAK_TIERS: {
@@ -56,6 +57,7 @@ export const PEAK_TIERS: {
         days: "18 Days",
         slug: "island-peak-climbing",
         highlight: "Classic first Himalayan summit above Chhukung.",
+        image: "/images/trips/peak.jpg",
       },
       {
         name: "Mera Peak Climbing",
@@ -63,6 +65,7 @@ export const PEAK_TIERS: {
         days: "17 Days",
         slug: "mera-peak-climbing",
         highlight: "Nepal's highest trekking peak with views of 5x 8,000m giants.",
+        image: "/images/trips/gokyo.jpg",
       },
       {
         name: "Lobuche East Peak",
@@ -70,6 +73,7 @@ export const PEAK_TIERS: {
         days: "16 Days",
         slug: "lobuche-east-peak-climbing",
         highlight: "Sharp alpine ridge climbing above the Khumbu Glacier.",
+        image: "/images/trips/everest.jpg",
       },
       {
         name: "Chulu West Peak",
@@ -77,6 +81,7 @@ export const PEAK_TIERS: {
         days: "21 Days",
         slug: "chulu-west-peak-climbing",
         highlight: "Grand glacier ascent overlooking the Annapurna Sanctuary.",
+        image: "/images/trips/annapurna.jpg",
       },
     ],
   },
@@ -91,6 +96,7 @@ export const PEAK_TIERS: {
         days: "28 Days",
         slug: "ama-dablam-expedition",
         highlight: "The Matterhorn of the Himalayas via the Southwest Ridge.",
+        image: "/images/trips/hero-ama-dablam.jpg",
       },
       {
         name: "Himlung Himal Expedition",
@@ -98,6 +104,7 @@ export const PEAK_TIERS: {
         days: "30 Days",
         slug: "himlung-himal-expedition",
         highlight: "Remote border giant near Phu; premier 7,000m stepping stone.",
+        image: "/images/trips/manaslu.jpg",
       },
       {
         name: "Baruntse Expedition",
@@ -105,6 +112,7 @@ export const PEAK_TIERS: {
         days: "32 Days",
         slug: "baruntse-expedition",
         highlight: "Pristine Hunku Basin giant with exceptional summit success.",
+        image: "/images/trips/peak.jpg",
       },
     ],
   },
@@ -119,6 +127,7 @@ export const PEAK_TIERS: {
         days: "60 Days",
         slug: "mount-everest-expedition",
         highlight: "The roof of the earth; 1:1 Sherpa guide and topout oxygen.",
+        image: "/images/trips/everest.jpg",
       },
       {
         name: "Manaslu Expedition",
@@ -126,6 +135,7 @@ export const PEAK_TIERS: {
         days: "45 Days",
         slug: "manaslu-expedition",
         highlight: "The Mountain of the Spirit; premier autumn 8,000m ascent.",
+        image: "/images/trips/manaslu.jpg",
       },
       {
         name: "Kanchenjunga Base & Peak",
@@ -133,6 +143,7 @@ export const PEAK_TIERS: {
         days: "52 Days",
         slug: "kanchenjunga-base-camp-trek",
         highlight: "Eastern giant on the Sikkim border in untouched wilderness.",
+        image: "/images/trips/kanchenjunga.jpg",
       },
     ],
   },
@@ -147,6 +158,7 @@ export const PEAK_TIERS: {
         days: "22 Days",
         slug: "island-mera-combo-climbing",
         highlight: "Two 6,000m summits linked via the technical Amphu Labtsa Pass.",
+        image: "/images/trips/peak.jpg",
       },
       {
         name: "Everest Three Passes + Island Peak",
@@ -154,6 +166,7 @@ export const PEAK_TIERS: {
         days: "21 Days",
         slug: "everest-three-high-passes-trek",
         highlight: "Renjo La, Cho La, Kongma La plus an Island Peak summit finish.",
+        image: "/images/trips/gokyo.jpg",
       },
     ],
   },
@@ -478,10 +491,17 @@ export function Nav() {
                 <div
                   key={tier.id}
                   className="relative"
-                  onMouseEnter={() => openDropdown(tier.id)}
                 >
                   <button
                     type="button"
+                    onClick={() => {
+                      if (activeDropdown === tier.id) {
+                        setActiveDropdown(null);
+                      } else {
+                        if (closeTimer.current) window.clearTimeout(closeTimer.current);
+                        setActiveDropdown(tier.id);
+                      }
+                    }}
                     className={`flex items-center gap-1 transition-colors cursor-pointer py-0.5 ${
                       activeDropdown === tier.id
                         ? "text-[#89d6e2] font-bold drop-shadow-[0_0_8px_rgba(137,214,226,0.4)]"
@@ -857,55 +877,93 @@ export function Nav() {
                 </div>
               )}
 
-              {/* PEAK TIERS DROPDOWNS (Image 3 Reference: 6000m-6500m, 6501-7000m, etc.) */}
+              {/* PEAK TIERS DROPDOWNS — Image Cards Design (Reference: Popular Destinations) */}
               {PEAK_TIERS.some((t) => t.id === activeDropdown) && (
                 <div>
                   {(() => {
                     const tier = PEAK_TIERS.find((t) => t.id === activeDropdown)!;
                     return (
-                      <div className="space-y-4">
-                        <div className="flex items-center justify-between border-b border-[#006b78]/40 pb-2">
+                      <div className="space-y-5">
+                        {/* Header: "Explore Our Treks / Popular Destinations" style */}
+                        <div className="flex items-center justify-between">
                           <div>
-                            <p className="font-mono text-xs uppercase tracking-[0.22em] text-[#89d6e2]">
-                              {tier.label}
-                            </p>
+                            <div className="flex items-center gap-2 mb-1">
+                              <Mountain className="w-4 h-4 text-[#89d6e2]" />
+                              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#89d6e2]/80 font-semibold">
+                                Explore Our Treks
+                              </span>
+                            </div>
+                            <h3 className="font-serif text-xl text-white leading-snug">
+                              Popular{" "}
+                              <em className="text-[#e8b765] not-italic font-semibold">Destinations</em>
+                            </h3>
                             <p className="text-[11px] text-white/60 font-mono mt-0.5">
-                              {tier.range}
+                              {tier.label} · {tier.range}
                             </p>
                           </div>
                           <Link
                             href="/destinations?category=peak-climbing"
                             onClick={() => setActiveDropdown(null)}
-                            className="font-mono text-xs uppercase text-[#e8b765] hover:text-[#f4cb7d] hover:underline flex items-center gap-1"
+                            className="font-mono text-xs uppercase text-[#e8b765] hover:text-[#f4cb7d] hover:underline flex items-center gap-1 whitespace-nowrap"
                           >
-                            All Climbing Expeditions <ArrowUpRight className="w-3 h-3" />
+                            All Climbing Expeditions <ArrowUpRight className="w-3.5 h-3.5" />
                           </Link>
                         </div>
 
+                        {/* Peak Cards with Images */}
                         <div className="grid grid-cols-3 gap-4">
                           {tier.peaks.map((peak) => (
                             <Link
                               key={peak.name}
                               href={`/destinations/${peak.slug}`}
                               onClick={() => setActiveDropdown(null)}
-                              className="group rounded-xl border border-[#006b78]/40 bg-[#00242b]/60 hover:bg-[#00515b]/45 hover:border-[#89d6e2]/60 p-4 transition-all duration-200 space-y-2 block shadow-sm hover:shadow-[0_4px_20px_rgba(137,214,226,0.18)]"
+                              className="group rounded-xl border border-[#2a5e3a]/50 bg-gradient-to-br from-[#0c2a15]/80 to-[#0a1f10]/80 hover:border-[#55c024]/60 hover:shadow-[0_6px_24px_rgba(85,192,36,0.2)] p-0 transition-all duration-300 block overflow-hidden"
                             >
-                              <div className="flex items-center justify-between">
-                                <span className="font-mono text-xs font-bold text-[#89d6e2] px-2 py-0.5 rounded bg-[#00515b]/50 border border-[#89d6e2]/35">
-                                  {peak.altitude}
-                                </span>
-                                <span className="font-mono text-[10px] text-white/60">
-                                  {peak.days}
-                                </span>
+                              {/* Image Section */}
+                              <div className="relative h-28 w-full overflow-hidden">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                  src={peak.image}
+                                  alt={peak.name}
+                                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1f10]/90 via-[#0a1f10]/30 to-transparent" />
+                                {/* Duration & Altitude Badges over image */}
+                                <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between">
+                                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#1b3d1f]/90 border border-[#55c024]/40 text-[10px] font-mono font-bold text-white backdrop-blur-sm">
+                                    <Mountain className="w-2.5 h-2.5 text-[#7ce63a]" />
+                                    {peak.days}
+                                  </span>
+                                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#55c024]/25 border border-[#55c024]/50 text-[10px] font-mono font-bold text-[#7ce63a] backdrop-blur-sm">
+                                    <Mountain className="w-2.5 h-2.5" />
+                                    {peak.altitude}
+                                  </span>
+                                </div>
                               </div>
-                              <h4 className="font-serif text-base text-white group-hover:text-[#89d6e2] transition-colors">
-                                {peak.name}
-                              </h4>
-                              <p className="text-xs text-white/70 leading-relaxed font-light">
-                                {peak.highlight}
-                              </p>
+                              {/* Text Section */}
+                              <div className="p-3.5 space-y-1.5">
+                                <h4 className="font-serif text-sm text-white group-hover:text-[#7ce63a] transition-colors leading-snug">
+                                  {peak.name}
+                                </h4>
+                                <p className="text-[11px] text-white/65 leading-relaxed font-light line-clamp-2">
+                                  {peak.highlight}
+                                </p>
+                                <div className="flex items-center justify-end pt-1">
+                                  <span className="w-6 h-6 rounded-full bg-[#55c024]/20 border border-[#55c024]/40 flex items-center justify-center group-hover:bg-[#55c024] group-hover:border-[#7ce63a] transition-all">
+                                    <ArrowUpRight className="w-3 h-3 text-[#7ce63a] group-hover:text-white transition-colors" />
+                                  </span>
+                                </div>
+                              </div>
                             </Link>
                           ))}
+                        </div>
+
+                        {/* Bottom: Trek · Explore · Discover */}
+                        <div className="flex items-center gap-3 pt-1 border-t border-[#2a5e3a]/30">
+                          <Mountain className="w-4 h-4 text-[#e8b765]" />
+                          <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-[#e8b765]/70 font-bold">
+                            Trek · Explore · Discover
+                          </span>
                         </div>
                       </div>
                     );
