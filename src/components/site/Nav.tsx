@@ -246,8 +246,8 @@ export function Nav() {
         onMouseLeave={scheduleClose}
       >
         {/* ──────────────────────────────────────────────────────────
-            MAIN FLOATING NAVBAR PILL (Refined Glass & Blurry Translucent)
-            - Blurry transparent obsidian glass matched to high-altitude hero
+            MAIN FLOATING NAVBAR PILL (Alpine Teal & Glacial Cyan Glass)
+            - Deep alpine teal/oceanic spruce glass matched to the website theme
             - Logo on left
             - Nepal, Tibet, Bhutan, Nepal Trekking, Tour Packages, Travel Guide, About Us, Contact Us
             - Search & Enquire on right
@@ -256,8 +256,8 @@ export function Nav() {
           <nav
             className={`w-full rounded-2xl border transition-all duration-300 px-4 sm:px-6 py-2 flex items-center justify-between gap-2 lg:gap-4 shadow-xl backdrop-blur-xl ${
               scrolled || activeDropdown
-                ? "bg-[#071317]/80 border-[#c59a4a]/40 shadow-[0_12px_40px_rgba(0,0,0,0.6)] ring-1 ring-white/10"
-                : "bg-[#050c0e]/40 hover:bg-[#071317]/55 border-[#c59a4a]/25 shadow-[0_8px_32px_rgba(0,0,0,0.35)] ring-1 ring-white/5"
+                ? "bg-gradient-to-r from-[#001e23]/95 via-[#00333b]/95 to-[#001e23]/95 border-[#006b78]/60 shadow-[0_12px_44px_rgba(0,25,30,0.7)] ring-1 ring-[#89d6e2]/25"
+                : "bg-gradient-to-r from-[#00262c]/80 via-[#003d46]/75 to-[#00262c]/80 hover:from-[#002e35]/90 hover:via-[#004853]/85 hover:to-[#002e35]/90 border-[#006b78]/50 hover:border-[#89d6e2]/50 shadow-[0_8px_32px_rgba(0,35,42,0.45)] ring-1 ring-white/10"
             }`}
           >
             {/* 1. LEFT BRAND LOGO */}
@@ -292,12 +292,16 @@ export function Nav() {
                   type="button"
                   className={`flex items-center gap-1 px-2.5 py-1.5 rounded-md text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer ${
                     activeDropdown === "nepal"
-                      ? "text-[#e8b765] bg-white/5"
-                      : "text-white/90 hover:text-[#e8b765]"
+                      ? "text-[#89d6e2] bg-[#00515b]/50 ring-1 ring-[#89d6e2]/30"
+                      : "text-white/90 hover:text-[#89d6e2]"
                   }`}
                 >
                   <span>Nepal</span>
-                  <ChevronDown className="w-3 h-3 text-[#e8b765]" />
+                  <ChevronDown
+                    className={`w-3 h-3 transition-transform ${
+                      activeDropdown === "nepal" ? "rotate-180 text-[#89d6e2]" : "text-[#89d6e2]/70"
+                    }`}
+                  />
                 </button>
               </div>
 
@@ -307,12 +311,16 @@ export function Nav() {
                   type="button"
                   className={`flex items-center gap-1 px-2.5 py-1.5 rounded-md text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer ${
                     activeDropdown === "tibet"
-                      ? "text-[#e8b765] bg-white/5"
-                      : "text-white/90 hover:text-[#e8b765]"
+                      ? "text-[#89d6e2] bg-[#00515b]/50 ring-1 ring-[#89d6e2]/30"
+                      : "text-white/90 hover:text-[#89d6e2]"
                   }`}
                 >
                   <span>Tibet</span>
-                  <ChevronDown className="w-3 h-3 text-[#e8b765]" />
+                  <ChevronDown
+                    className={`w-3 h-3 transition-transform ${
+                      activeDropdown === "tibet" ? "rotate-180 text-[#89d6e2]" : "text-[#89d6e2]/70"
+                    }`}
+                  />
                 </button>
               </div>
 
@@ -322,12 +330,16 @@ export function Nav() {
                   type="button"
                   className={`flex items-center gap-1 px-2.5 py-1.5 rounded-md text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer ${
                     activeDropdown === "bhutan"
-                      ? "text-[#e8b765] bg-white/5"
-                      : "text-white/90 hover:text-[#e8b765]"
+                      ? "text-[#89d6e2] bg-[#00515b]/50 ring-1 ring-[#89d6e2]/30"
+                      : "text-white/90 hover:text-[#89d6e2]"
                   }`}
                 >
                   <span>Bhutan</span>
-                  <ChevronDown className="w-3 h-3 text-[#e8b765]" />
+                  <ChevronDown
+                    className={`w-3 h-3 transition-transform ${
+                      activeDropdown === "bhutan" ? "rotate-180 text-[#89d6e2]" : "text-[#89d6e2]/70"
+                    }`}
+                  />
                 </button>
               </div>
 
@@ -337,12 +349,16 @@ export function Nav() {
                   type="button"
                   className={`flex items-center gap-1 px-2.5 py-1.5 rounded-md text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer ${
                     activeDropdown === "trekking"
-                      ? "text-[#e8b765] bg-white/5"
-                      : "text-white/90 hover:text-[#e8b765]"
+                      ? "text-[#89d6e2] bg-[#00515b]/50 ring-1 ring-[#89d6e2]/30"
+                      : "text-white/90 hover:text-[#89d6e2]"
                   }`}
                 >
                   <span>Nepal Trekking</span>
-                  <ChevronDown className="w-3 h-3 text-[#e8b765]" />
+                  <ChevronDown
+                    className={`w-3 h-3 transition-transform ${
+                      activeDropdown === "trekking" ? "rotate-180 text-[#89d6e2]" : "text-[#89d6e2]/70"
+                    }`}
+                  />
                 </button>
               </div>
 
@@ -352,12 +368,16 @@ export function Nav() {
                   type="button"
                   className={`flex items-center gap-1 px-2.5 py-1.5 rounded-md text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer ${
                     activeDropdown === "tours"
-                      ? "text-[#e8b765] bg-white/5"
-                      : "text-white/90 hover:text-[#e8b765]"
+                      ? "text-[#89d6e2] bg-[#00515b]/50 ring-1 ring-[#89d6e2]/30"
+                      : "text-white/90 hover:text-[#89d6e2]"
                   }`}
                 >
                   <span>Tour Packages</span>
-                  <ChevronDown className="w-3 h-3 text-[#e8b765]" />
+                  <ChevronDown
+                    className={`w-3 h-3 transition-transform ${
+                      activeDropdown === "tours" ? "rotate-180 text-[#89d6e2]" : "text-[#89d6e2]/70"
+                    }`}
+                  />
                 </button>
               </div>
 
@@ -367,12 +387,16 @@ export function Nav() {
                   type="button"
                   className={`flex items-center gap-1 px-2.5 py-1.5 rounded-md text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer ${
                     activeDropdown === "guide"
-                      ? "text-[#e8b765] bg-white/5"
-                      : "text-white/90 hover:text-[#e8b765]"
+                      ? "text-[#89d6e2] bg-[#00515b]/50 ring-1 ring-[#89d6e2]/30"
+                      : "text-white/90 hover:text-[#89d6e2]"
                   }`}
                 >
                   <span>Travel Guide</span>
-                  <ChevronDown className="w-3 h-3 text-[#e8b765]" />
+                  <ChevronDown
+                    className={`w-3 h-3 transition-transform ${
+                      activeDropdown === "guide" ? "rotate-180 text-[#89d6e2]" : "text-[#89d6e2]/70"
+                    }`}
+                  />
                 </button>
               </div>
 
@@ -382,12 +406,16 @@ export function Nav() {
                   type="button"
                   className={`flex items-center gap-1 px-2.5 py-1.5 rounded-md text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer ${
                     activeDropdown === "about"
-                      ? "text-[#e8b765] bg-white/5"
-                      : "text-white/90 hover:text-[#e8b765]"
+                      ? "text-[#89d6e2] bg-[#00515b]/50 ring-1 ring-[#89d6e2]/30"
+                      : "text-white/90 hover:text-[#89d6e2]"
                   }`}
                 >
                   <span>About Us</span>
-                  <ChevronDown className="w-3 h-3 text-[#e8b765]" />
+                  <ChevronDown
+                    className={`w-3 h-3 transition-transform ${
+                      activeDropdown === "about" ? "rotate-180 text-[#89d6e2]" : "text-[#89d6e2]/70"
+                    }`}
+                  />
                 </button>
               </div>
 
@@ -407,26 +435,26 @@ export function Nav() {
               <button
                 type="button"
                 onClick={() => setSearchOpen(true)}
-                className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#e8b765]/50 text-white/80 hover:text-[#e8b765] flex items-center justify-center transition-colors cursor-pointer"
+                className="w-8 h-8 rounded-lg bg-[#004650]/40 hover:bg-[#005a66]/60 border border-[#006b78]/50 hover:border-[#89d6e2]/60 text-[#89d6e2] flex items-center justify-center transition-colors cursor-pointer shadow-sm"
                 aria-label="Search Treks & Destinations"
                 title="Search destinations..."
               >
                 <Search className="w-4 h-4" />
               </button>
 
-              {/* Enquire Button */}
+              {/* Enquire Button (Alpine Gold Gradient Pill) */}
               <Link
                 href="/#enquiry"
-                className="group flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-[#d99f38] hover:border-[#e8b765] bg-[#d99f38]/15 hover:bg-[#d99f38] text-[#e8b765] hover:text-[#071317] text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-sm cursor-pointer whitespace-nowrap"
+                className="group flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-[#c88a3e] hover:border-[#e8b765] bg-gradient-to-r from-[#c88a3e]/25 to-[#e8b765]/20 hover:from-[#c88a3e] hover:to-[#e8b765] text-[#e8b765] hover:text-[#002228] text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-[0_2px_12px_rgba(200,138,62,0.3)] hover:shadow-[0_4px_20px_rgba(232,183,101,0.5)] cursor-pointer whitespace-nowrap"
               >
-                <Send className="w-3 h-3 text-[#e8b765] group-hover:text-[#071317] transition-all group-hover:translate-x-0.5" />
+                <Send className="w-3 h-3 text-[#e8b765] group-hover:text-[#002228] transition-all group-hover:translate-x-0.5" />
                 <span className="hidden sm:inline">Enquire</span>
               </Link>
 
               {/* Mobile Menu Hamburger */}
               <button
                 type="button"
-                className="xl:hidden w-8 h-8 rounded-lg bg-white/5 border border-white/10 text-white flex items-center justify-center cursor-pointer hover:border-[#e8b765]/50 transition-colors"
+                className="xl:hidden w-8 h-8 rounded-lg bg-[#004650]/40 border border-[#006b78]/50 text-[#89d6e2] hover:border-[#89d6e2]/60 flex items-center justify-center cursor-pointer transition-colors shadow-sm"
                 onClick={() => setOpen((v) => !v)}
                 aria-label={open ? "Close menu" : "Open menu"}
               >
@@ -436,12 +464,12 @@ export function Nav() {
           </nav>
 
           {/* ──────────────────────────────────────────────────────────
-              3. PEAK ALTITUDE TIER SUB-NAV (Image 3 Reference)
+              3. PEAK ALTITUDE TIER SUB-NAV (Alpine Teal & Cyan Theme)
               6000m-6500m | 6501-7000m | 7001m-8848m | Multiple Peaks
               ────────────────────────────────────────────────────────── */}
           <div className="hidden xl:flex items-center justify-center mt-1.5">
-            <div className="inline-flex items-center gap-4 sm:gap-6 px-5 py-1 rounded-full border border-[#c59a4a]/20 bg-[#050c0e]/40 hover:bg-[#071317]/60 backdrop-blur-xl shadow-lg text-[11px] font-mono tracking-wider transition-colors">
-              <span className="text-[#e8b765]/70 flex items-center gap-1 text-[10px] uppercase font-bold">
+            <div className="inline-flex items-center gap-4 sm:gap-6 px-5 py-1 rounded-full border border-[#006b78]/50 bg-gradient-to-r from-[#00242a]/85 via-[#003840]/80 to-[#00242a]/85 hover:from-[#002c33]/90 hover:via-[#00444e]/85 hover:to-[#002c33]/90 backdrop-blur-xl shadow-[0_6px_22px_rgba(0,30,36,0.45)] text-[11px] font-mono tracking-wider transition-colors ring-1 ring-[#89d6e2]/15">
+              <span className="text-[#89d6e2] flex items-center gap-1 text-[10px] uppercase font-bold tracking-widest">
                 <Mountain className="w-3 h-3 text-[#e8b765]" />
                 Peak Tiers:
               </span>
@@ -456,14 +484,14 @@ export function Nav() {
                     type="button"
                     className={`flex items-center gap-1 transition-colors cursor-pointer py-0.5 ${
                       activeDropdown === tier.id
-                        ? "text-[#e8b765] font-bold"
-                        : "text-white/80 hover:text-white"
+                        ? "text-[#89d6e2] font-bold drop-shadow-[0_0_8px_rgba(137,214,226,0.4)]"
+                        : "text-white/80 hover:text-[#89d6e2]"
                     }`}
                   >
                     <span>{tier.label}</span>
                     <ChevronDown
                       className={`w-3 h-3 transition-transform ${
-                        activeDropdown === tier.id ? "rotate-180 text-[#e8b765]" : "text-white/40"
+                        activeDropdown === tier.id ? "rotate-180 text-[#89d6e2]" : "text-[#89d6e2]/50"
                       }`}
                     />
                   </button>
@@ -474,26 +502,26 @@ export function Nav() {
 
           {/* ──────────────────────────────────────────────────────────
               4. DROPDOWN PANELS (Desktop)
-              Attached seamlessly beneath the navbar
+              Alpine Teal & Cyan Theme matched to Selected High Routes
               ────────────────────────────────────────────────────────── */}
           {activeDropdown && (
             <div
               onMouseEnter={() => {
                 if (closeTimer.current) window.clearTimeout(closeTimer.current);
               }}
-              className="hidden xl:block mt-2 rounded-2xl border border-[#c59a4a]/40 bg-[#071317]/98 shadow-[0_20px_60px_rgba(0,0,0,0.85)] backdrop-blur-2xl p-6 animate-in fade-in slide-in-from-top-2 duration-200"
+              className="hidden xl:block mt-2 rounded-2xl border border-[#006b78]/60 bg-gradient-to-b from-[#002a31]/98 via-[#003840]/96 to-[#002227]/98 shadow-[0_24px_64px_rgba(0,20,25,0.85)] backdrop-blur-2xl p-6 ring-1 ring-[#89d6e2]/20 animate-in fade-in slide-in-from-top-2 duration-200"
             >
               {/* NEPAL DROPDOWN */}
               {activeDropdown === "nepal" && (
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                  <div className="flex items-center justify-between border-b border-[#006b78]/40 pb-2">
                     <p className="font-mono text-xs uppercase tracking-[0.22em] text-[#89d6e2]">
                       Nepal Expeditions &amp; High Valleys
                     </p>
                     <Link
                       href="/destinations?country=nepal"
                       onClick={() => setActiveDropdown(null)}
-                      className="font-mono text-xs uppercase text-[#e8b765] hover:underline flex items-center gap-1"
+                      className="font-mono text-xs uppercase text-[#e8b765] hover:text-[#f4cb7d] hover:underline flex items-center gap-1"
                     >
                       View all Nepal routes <ArrowUpRight className="w-3 h-3" />
                     </Link>
@@ -506,7 +534,7 @@ export function Nav() {
                           <Link
                             href={`/destinations?region=${region.id}`}
                             onClick={() => setActiveDropdown(null)}
-                            className="font-mono text-[11px] uppercase tracking-wider text-[#e8b765] font-semibold hover:underline block"
+                            className="font-mono text-[11px] uppercase tracking-wider text-[#e8b765] font-semibold hover:text-[#f4cb7d] hover:underline block"
                           >
                             {region.label}
                           </Link>
@@ -516,7 +544,7 @@ export function Nav() {
                                 <Link
                                   href={`/destinations/${trip.slug}`}
                                   onClick={() => setActiveDropdown(null)}
-                                  className="text-xs text-white/75 hover:text-white transition-colors block truncate"
+                                  className="text-xs text-white/80 hover:text-[#89d6e2] transition-colors block truncate"
                                 >
                                   {trip.name}
                                 </Link>
@@ -533,14 +561,14 @@ export function Nav() {
               {/* TIBET DROPDOWN */}
               {activeDropdown === "tibet" && (
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                  <div className="flex items-center justify-between border-b border-[#006b78]/40 pb-2">
                     <p className="font-mono text-xs uppercase tracking-[0.22em] text-[#89d6e2]">
                       Tibet Roof of the World Expeditions
                     </p>
                     <Link
                       href="/destinations?country=tibet"
                       onClick={() => setActiveDropdown(null)}
-                      className="font-mono text-xs uppercase text-[#e8b765] hover:underline flex items-center gap-1"
+                      className="font-mono text-xs uppercase text-[#e8b765] hover:text-[#f4cb7d] hover:underline flex items-center gap-1"
                     >
                       View all Tibet routes <ArrowUpRight className="w-3 h-3" />
                     </Link>
@@ -551,17 +579,17 @@ export function Nav() {
                         key={trip.slug}
                         href={`/destinations/${trip.slug}`}
                         onClick={() => setActiveDropdown(null)}
-                        className="group rounded-xl border border-white/10 bg-white/5 p-4 hover:border-[#c59a4a]/50 transition-all"
+                        className="group rounded-xl border border-[#006b78]/40 bg-[#00242b]/60 hover:bg-[#00515b]/45 hover:border-[#89d6e2]/60 p-4 transition-all duration-200 shadow-sm hover:shadow-[0_4px_20px_rgba(137,214,226,0.18)]"
                       >
-                        <h4 className="font-serif text-base text-white group-hover:text-[#e8b765]">
+                        <h4 className="font-serif text-base text-white group-hover:text-[#89d6e2] transition-colors">
                           {trip.name}
                         </h4>
-                        <p className="text-xs text-white/60 mt-1 line-clamp-2">
+                        <p className="text-xs text-white/70 mt-1 line-clamp-2">
                           {trip.overview}
                         </p>
                         <div className="mt-3 flex items-center justify-between font-mono text-[11px] text-[#89d6e2]">
                           <span>{trip.days} Days</span>
-                          <span>{trip.maxAltitude} m</span>
+                          <span className="font-semibold">{trip.maxAltitude} m</span>
                         </div>
                       </Link>
                     ))}
@@ -572,14 +600,14 @@ export function Nav() {
               {/* BHUTAN DROPDOWN */}
               {activeDropdown === "bhutan" && (
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                  <div className="flex items-center justify-between border-b border-[#006b78]/40 pb-2">
                     <p className="font-mono text-xs uppercase tracking-[0.22em] text-[#89d6e2]">
                       Kingdom of Bhutan Dzongs &amp; Alpine Passes
                     </p>
                     <Link
                       href="/destinations?country=bhutan"
                       onClick={() => setActiveDropdown(null)}
-                      className="font-mono text-xs uppercase text-[#e8b765] hover:underline flex items-center gap-1"
+                      className="font-mono text-xs uppercase text-[#e8b765] hover:text-[#f4cb7d] hover:underline flex items-center gap-1"
                     >
                       View all Bhutan routes <ArrowUpRight className="w-3 h-3" />
                     </Link>
@@ -590,17 +618,17 @@ export function Nav() {
                         key={trip.slug}
                         href={`/destinations/${trip.slug}`}
                         onClick={() => setActiveDropdown(null)}
-                        className="group rounded-xl border border-white/10 bg-white/5 p-4 hover:border-[#c59a4a]/50 transition-all"
+                        className="group rounded-xl border border-[#006b78]/40 bg-[#00242b]/60 hover:bg-[#00515b]/45 hover:border-[#89d6e2]/60 p-4 transition-all duration-200 shadow-sm hover:shadow-[0_4px_20px_rgba(137,214,226,0.18)]"
                       >
-                        <h4 className="font-serif text-base text-white group-hover:text-[#e8b765]">
+                        <h4 className="font-serif text-base text-white group-hover:text-[#89d6e2] transition-colors">
                           {trip.name}
                         </h4>
-                        <p className="text-xs text-white/60 mt-1 line-clamp-2">
+                        <p className="text-xs text-white/70 mt-1 line-clamp-2">
                           {trip.overview}
                         </p>
                         <div className="mt-3 flex items-center justify-between font-mono text-[11px] text-[#89d6e2]">
                           <span>{trip.days} Days</span>
-                          <span>{trip.maxAltitude} m</span>
+                          <span className="font-semibold">{trip.maxAltitude} m</span>
                         </div>
                       </Link>
                     ))}
@@ -611,14 +639,14 @@ export function Nav() {
               {/* NEPAL TREKKING DROPDOWN */}
               {activeDropdown === "trekking" && (
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                  <div className="flex items-center justify-between border-b border-[#006b78]/40 pb-2">
                     <p className="font-mono text-xs uppercase tracking-[0.22em] text-[#89d6e2]">
                       Nepal Trekking Routes by Region
                     </p>
                     <Link
                       href="/treks"
                       onClick={() => setActiveDropdown(null)}
-                      className="font-mono text-xs uppercase text-[#e8b765] hover:underline flex items-center gap-1"
+                      className="font-mono text-xs uppercase text-[#e8b765] hover:text-[#f4cb7d] hover:underline flex items-center gap-1"
                     >
                       View full routes directory <ArrowUpRight className="w-3 h-3" />
                     </Link>
@@ -631,7 +659,7 @@ export function Nav() {
                           <Link
                             href={`/destinations?region=${region.id}`}
                             onClick={() => setActiveDropdown(null)}
-                            className="font-mono text-[11px] uppercase tracking-wider text-[#e8b765] font-semibold hover:underline block"
+                            className="font-mono text-[11px] uppercase tracking-wider text-[#e8b765] font-semibold hover:text-[#f4cb7d] hover:underline block"
                           >
                             {region.label}
                           </Link>
@@ -641,7 +669,7 @@ export function Nav() {
                                 <Link
                                   href={`/destinations/${t.slug}`}
                                   onClick={() => setActiveDropdown(null)}
-                                  className="text-xs text-white/75 hover:text-white transition-colors block truncate"
+                                  className="text-xs text-white/80 hover:text-[#89d6e2] transition-colors block truncate"
                                 >
                                   {t.name}
                                 </Link>
@@ -658,14 +686,14 @@ export function Nav() {
               {/* TOUR PACKAGES DROPDOWN */}
               {activeDropdown === "tours" && (
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                  <div className="flex items-center justify-between border-b border-[#006b78]/40 pb-2">
                     <p className="font-mono text-xs uppercase tracking-[0.22em] text-[#89d6e2]">
                       Himalayan Cultural Tours, Safari &amp; Helicopter Flights
                     </p>
                     <Link
                       href="/destinations?category=tours"
                       onClick={() => setActiveDropdown(null)}
-                      className="font-mono text-xs uppercase text-[#e8b765] hover:underline flex items-center gap-1"
+                      className="font-mono text-xs uppercase text-[#e8b765] hover:text-[#f4cb7d] hover:underline flex items-center gap-1"
                     >
                       View all tours <ArrowUpRight className="w-3 h-3" />
                     </Link>
@@ -696,7 +724,7 @@ export function Nav() {
                         <Link
                           href={group.catHref}
                           onClick={() => setActiveDropdown(null)}
-                          className="font-mono text-xs uppercase tracking-wider text-[#e8b765] font-semibold hover:underline block"
+                          className="font-mono text-xs uppercase tracking-wider text-[#e8b765] font-semibold hover:text-[#f4cb7d] hover:underline block"
                         >
                           {group.title}
                         </Link>
@@ -708,7 +736,7 @@ export function Nav() {
                                 <Link
                                   href={trip ? `/destinations/${trip.slug}` : "/destinations"}
                                   onClick={() => setActiveDropdown(null)}
-                                  className="text-xs text-white/75 hover:text-white transition-colors block truncate"
+                                  className="text-xs text-white/80 hover:text-[#89d6e2] transition-colors block truncate"
                                 >
                                   {name}
                                 </Link>
@@ -725,14 +753,14 @@ export function Nav() {
               {/* TRAVEL GUIDE DROPDOWN */}
               {activeDropdown === "guide" && (
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                  <div className="flex items-center justify-between border-b border-[#006b78]/40 pb-2">
                     <p className="font-mono text-xs uppercase tracking-[0.22em] text-[#89d6e2]">
                       High-Altitude Expedition Guides &amp; Protocols
                     </p>
                     <Link
                       href="/process"
                       onClick={() => setActiveDropdown(null)}
-                      className="font-mono text-xs uppercase text-[#e8b765] hover:underline flex items-center gap-1"
+                      className="font-mono text-xs uppercase text-[#e8b765] hover:text-[#f4cb7d] hover:underline flex items-center gap-1"
                     >
                       Our 5-Stage Methodology <ArrowUpRight className="w-3 h-3" />
                     </Link>
@@ -770,13 +798,13 @@ export function Nav() {
                           key={g.title}
                           href={g.href}
                           onClick={() => setActiveDropdown(null)}
-                          className="group rounded-xl border border-white/10 bg-white/5 p-4 hover:border-[#c59a4a]/50 transition-all space-y-2 block"
+                          className="group rounded-xl border border-[#006b78]/40 bg-[#00242b]/60 hover:bg-[#00515b]/45 hover:border-[#89d6e2]/60 p-4 transition-all duration-200 space-y-2 block shadow-sm hover:shadow-[0_4px_20px_rgba(137,214,226,0.18)]"
                         >
-                          <Icon className="w-5 h-5 text-[#e8b765] group-hover:scale-110 transition-transform" />
-                          <h4 className="font-serif text-sm text-white group-hover:text-[#e8b765]">
+                          <Icon className="w-5 h-5 text-[#89d6e2] group-hover:scale-110 transition-transform" />
+                          <h4 className="font-serif text-sm text-white group-hover:text-[#89d6e2] transition-colors">
                             {g.title}
                           </h4>
-                          <p className="text-[11px] text-white/60 leading-relaxed">
+                          <p className="text-[11px] text-white/70 leading-relaxed">
                             {g.desc}
                           </p>
                         </Link>
@@ -789,14 +817,14 @@ export function Nav() {
               {/* ABOUT US DROPDOWN (Image 2 Reference - Exact Match) */}
               {activeDropdown === "about" && (
                 <div className="space-y-4">
-                  <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                  <div className="flex items-center justify-between border-b border-[#006b78]/40 pb-2">
                     <p className="font-mono text-xs uppercase tracking-[0.22em] text-[#89d6e2]">
                       BROTHERS Holidays Adventure Pvt. Ltd.
                     </p>
                     <Link
                       href="/about"
                       onClick={() => setActiveDropdown(null)}
-                      className="font-mono text-xs uppercase text-[#e8b765] hover:underline flex items-center gap-1"
+                      className="font-mono text-xs uppercase text-[#e8b765] hover:text-[#f4cb7d] hover:underline flex items-center gap-1"
                     >
                       About Us Overview <ArrowUpRight className="w-3 h-3" />
                     </Link>
@@ -809,16 +837,16 @@ export function Nav() {
                           key={sub.label}
                           href={sub.href}
                           onClick={() => setActiveDropdown(null)}
-                          className="group flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-3.5 hover:border-[#c59a4a]/60 hover:bg-white/[0.08] transition-all"
+                          className="group flex items-start gap-3 rounded-xl border border-[#006b78]/40 bg-[#00242b]/60 hover:bg-[#00515b]/45 hover:border-[#89d6e2]/60 p-3.5 transition-all duration-200 shadow-sm hover:shadow-[0_4px_20px_rgba(137,214,226,0.18)]"
                         >
-                          <div className="w-8 h-8 rounded-lg bg-[#c59a4a]/20 border border-[#c59a4a]/30 flex items-center justify-center text-[#e8b765] shrink-0 group-hover:scale-105 transition-transform">
+                          <div className="w-8 h-8 rounded-lg bg-[#00515b]/50 border border-[#89d6e2]/35 flex items-center justify-center text-[#89d6e2] group-hover:text-[#e8b765] group-hover:border-[#e8b765]/50 shrink-0 group-hover:scale-105 transition-all">
                             <Icon className="w-4 h-4" />
                           </div>
                           <div>
-                            <h4 className="font-serif text-sm text-white group-hover:text-[#e8b765] transition-colors leading-snug">
+                            <h4 className="font-serif text-sm text-white group-hover:text-[#89d6e2] transition-colors leading-snug">
                               {sub.label}
                             </h4>
-                            <p className="text-[11px] text-white/55 leading-tight mt-0.5">
+                            <p className="text-[11px] text-white/65 leading-tight mt-0.5">
                               {sub.desc}
                             </p>
                           </div>
@@ -836,19 +864,19 @@ export function Nav() {
                     const tier = PEAK_TIERS.find((t) => t.id === activeDropdown)!;
                     return (
                       <div className="space-y-4">
-                        <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                        <div className="flex items-center justify-between border-b border-[#006b78]/40 pb-2">
                           <div>
                             <p className="font-mono text-xs uppercase tracking-[0.22em] text-[#89d6e2]">
                               {tier.label}
                             </p>
-                            <p className="text-[11px] text-white/50 font-mono mt-0.5">
+                            <p className="text-[11px] text-white/60 font-mono mt-0.5">
                               {tier.range}
                             </p>
                           </div>
                           <Link
                             href="/destinations?category=peak-climbing"
                             onClick={() => setActiveDropdown(null)}
-                            className="font-mono text-xs uppercase text-[#e8b765] hover:underline flex items-center gap-1"
+                            className="font-mono text-xs uppercase text-[#e8b765] hover:text-[#f4cb7d] hover:underline flex items-center gap-1"
                           >
                             All Climbing Expeditions <ArrowUpRight className="w-3 h-3" />
                           </Link>
@@ -860,20 +888,20 @@ export function Nav() {
                               key={peak.name}
                               href={`/destinations/${peak.slug}`}
                               onClick={() => setActiveDropdown(null)}
-                              className="group rounded-xl border border-white/10 bg-white/5 p-4 hover:border-[#c59a4a]/60 hover:bg-white/[0.08] transition-all space-y-2 block"
+                              className="group rounded-xl border border-[#006b78]/40 bg-[#00242b]/60 hover:bg-[#00515b]/45 hover:border-[#89d6e2]/60 p-4 transition-all duration-200 space-y-2 block shadow-sm hover:shadow-[0_4px_20px_rgba(137,214,226,0.18)]"
                             >
                               <div className="flex items-center justify-between">
-                                <span className="font-mono text-xs font-bold text-[#e8b765] px-2 py-0.5 rounded bg-[#c59a4a]/15 border border-[#c59a4a]/30">
+                                <span className="font-mono text-xs font-bold text-[#89d6e2] px-2 py-0.5 rounded bg-[#00515b]/50 border border-[#89d6e2]/35">
                                   {peak.altitude}
                                 </span>
-                                <span className="font-mono text-[10px] text-white/50">
+                                <span className="font-mono text-[10px] text-white/60">
                                   {peak.days}
                                 </span>
                               </div>
-                              <h4 className="font-serif text-base text-white group-hover:text-[#e8b765] transition-colors">
+                              <h4 className="font-serif text-base text-white group-hover:text-[#89d6e2] transition-colors">
                                 {peak.name}
                               </h4>
-                              <p className="text-xs text-white/60 leading-relaxed font-light">
+                              <p className="text-xs text-white/70 leading-relaxed font-light">
                                 {peak.highlight}
                               </p>
                             </Link>
@@ -889,28 +917,28 @@ export function Nav() {
 
           {/* ──────────────────────────────────────────────────────────
               5. MOBILE NAVIGATION DRAWER
-              Complete nested accordions with all requested items
+              Complete nested accordions with alpine teal & cyan styling
               ────────────────────────────────────────────────────────── */}
           {open && (
-            <div className="mt-2 rounded-2xl border border-[#c59a4a]/40 bg-[#071317]/98 px-5 py-6 backdrop-blur-2xl xl:hidden shadow-2xl max-h-[82vh] overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-200 space-y-4">
-              <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#e8b765] font-semibold">
+            <div className="mt-2 rounded-2xl border border-[#006b78]/60 bg-gradient-to-b from-[#00282f]/98 via-[#00373f]/98 to-[#002026]/98 px-5 py-6 backdrop-blur-2xl xl:hidden shadow-2xl max-h-[82vh] overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-200 space-y-4 ring-1 ring-[#89d6e2]/20">
+              <div className="flex items-center justify-between border-b border-[#006b78]/40 pb-3">
+                <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#89d6e2] font-semibold">
                   Expedition Menu
                 </span>
-                <span className="text-xs font-mono text-white/40">Nepal · Tibet · Bhutan</span>
+                <span className="text-xs font-mono text-[#89d6e2]/60">Nepal · Tibet · Bhutan</span>
               </div>
 
               {/* Nepal */}
-              <div className="border-b border-white/10 pb-2">
+              <div className="border-b border-[#006b78]/30 pb-2">
                 <button
                   type="button"
                   onClick={() => setMobileExpanded((e) => (e === "nepal" ? null : "nepal"))}
-                  className="flex w-full items-center justify-between py-2 text-xs font-semibold uppercase tracking-wider text-white"
+                  className="flex w-full items-center justify-between py-2 text-xs font-semibold uppercase tracking-wider text-white hover:text-[#89d6e2] transition-colors"
                 >
                   <span>Nepal Destinations</span>
                   <ChevronDown
                     className={`w-3.5 h-3.5 transition-transform ${
-                      mobileExpanded === "nepal" ? "rotate-180 text-[#e8b765]" : ""
+                      mobileExpanded === "nepal" ? "rotate-180 text-[#89d6e2]" : "text-[#89d6e2]/70"
                     }`}
                   />
                 </button>
@@ -927,7 +955,7 @@ export function Nav() {
                               <Link
                                 href={`/destinations/${t.slug}`}
                                 onClick={() => setOpen(false)}
-                                className="block text-[11px] text-white/70 hover:text-white"
+                                className="block text-[11px] text-white/75 hover:text-[#89d6e2]"
                               >
                                 {t.name}
                               </Link>
@@ -941,16 +969,16 @@ export function Nav() {
               </div>
 
               {/* Tibet */}
-              <div className="border-b border-white/10 pb-2">
+              <div className="border-b border-[#006b78]/30 pb-2">
                 <button
                   type="button"
                   onClick={() => setMobileExpanded((e) => (e === "tibet" ? null : "tibet"))}
-                  className="flex w-full items-center justify-between py-2 text-xs font-semibold uppercase tracking-wider text-white"
+                  className="flex w-full items-center justify-between py-2 text-xs font-semibold uppercase tracking-wider text-white hover:text-[#89d6e2] transition-colors"
                 >
                   <span>Tibet Tours</span>
                   <ChevronDown
                     className={`w-3.5 h-3.5 transition-transform ${
-                      mobileExpanded === "tibet" ? "rotate-180 text-[#e8b765]" : ""
+                      mobileExpanded === "tibet" ? "rotate-180 text-[#89d6e2]" : "text-[#89d6e2]/70"
                     }`}
                   />
                 </button>
@@ -961,7 +989,7 @@ export function Nav() {
                         <Link
                           href={`/destinations/${t.slug}`}
                           onClick={() => setOpen(false)}
-                          className="block text-[11px] text-white/70 hover:text-white"
+                          className="block text-[11px] text-white/75 hover:text-[#89d6e2]"
                         >
                           {t.name} ({t.days}d)
                         </Link>
@@ -972,16 +1000,16 @@ export function Nav() {
               </div>
 
               {/* Bhutan */}
-              <div className="border-b border-white/10 pb-2">
+              <div className="border-b border-[#006b78]/30 pb-2">
                 <button
                   type="button"
                   onClick={() => setMobileExpanded((e) => (e === "bhutan" ? null : "bhutan"))}
-                  className="flex w-full items-center justify-between py-2 text-xs font-semibold uppercase tracking-wider text-white"
+                  className="flex w-full items-center justify-between py-2 text-xs font-semibold uppercase tracking-wider text-white hover:text-[#89d6e2] transition-colors"
                 >
                   <span>Bhutan Expeditions</span>
                   <ChevronDown
                     className={`w-3.5 h-3.5 transition-transform ${
-                      mobileExpanded === "bhutan" ? "rotate-180 text-[#e8b765]" : ""
+                      mobileExpanded === "bhutan" ? "rotate-180 text-[#89d6e2]" : "text-[#89d6e2]/70"
                     }`}
                   />
                 </button>
@@ -992,7 +1020,7 @@ export function Nav() {
                         <Link
                           href={`/destinations/${t.slug}`}
                           onClick={() => setOpen(false)}
-                          className="block text-[11px] text-white/70 hover:text-white"
+                          className="block text-[11px] text-white/75 hover:text-[#89d6e2]"
                         >
                           {t.name} ({t.days}d)
                         </Link>
@@ -1003,16 +1031,16 @@ export function Nav() {
               </div>
 
               {/* Peak Climbing by Elevation (Image 3) */}
-              <div className="border-b border-white/10 pb-2">
+              <div className="border-b border-[#006b78]/30 pb-2">
                 <button
                   type="button"
                   onClick={() => setMobileExpanded((e) => (e === "peaks" ? null : "peaks"))}
-                  className="flex w-full items-center justify-between py-2 text-xs font-semibold uppercase tracking-wider text-[#e8b765]"
+                  className="flex w-full items-center justify-between py-2 text-xs font-semibold uppercase tracking-wider text-[#89d6e2] hover:text-white transition-colors"
                 >
                   <span>Peak Climbing Tiers (6000m - 8848m)</span>
                   <ChevronDown
                     className={`w-3.5 h-3.5 transition-transform ${
-                      mobileExpanded === "peaks" ? "rotate-180 text-[#e8b765]" : ""
+                      mobileExpanded === "peaks" ? "rotate-180 text-[#89d6e2]" : "text-[#89d6e2]/70"
                     }`}
                   />
                 </button>
@@ -1029,7 +1057,7 @@ export function Nav() {
                               <Link
                                 href={`/destinations/${p.slug}`}
                                 onClick={() => setOpen(false)}
-                                className="block text-[11px] text-white/70 hover:text-white"
+                                className="block text-[11px] text-white/75 hover:text-[#89d6e2]"
                               >
                                 {p.name} · {p.altitude}
                               </Link>
@@ -1043,16 +1071,16 @@ export function Nav() {
               </div>
 
               {/* About Us (Image 2) */}
-              <div className="border-b border-white/10 pb-2">
+              <div className="border-b border-[#006b78]/30 pb-2">
                 <button
                   type="button"
                   onClick={() => setMobileExpanded((e) => (e === "about" ? null : "about"))}
-                  className="flex w-full items-center justify-between py-2 text-xs font-semibold uppercase tracking-wider text-white"
+                  className="flex w-full items-center justify-between py-2 text-xs font-semibold uppercase tracking-wider text-white hover:text-[#89d6e2] transition-colors"
                 >
                   <span>About Us</span>
                   <ChevronDown
                     className={`w-3.5 h-3.5 transition-transform ${
-                      mobileExpanded === "about" ? "rotate-180 text-[#e8b765]" : ""
+                      mobileExpanded === "about" ? "rotate-180 text-[#89d6e2]" : "text-[#89d6e2]/70"
                     }`}
                   />
                 </button>
@@ -1063,7 +1091,7 @@ export function Nav() {
                         <Link
                           href={sub.href}
                           onClick={() => setOpen(false)}
-                          className="block text-[11px] text-white/80 hover:text-[#e8b765]"
+                          className="block text-[11px] text-white/80 hover:text-[#89d6e2]"
                         >
                           {sub.label}
                         </Link>
@@ -1078,21 +1106,21 @@ export function Nav() {
                 <Link
                   href="/destinations"
                   onClick={() => setOpen(false)}
-                  className="block py-1.5 text-xs font-mono uppercase tracking-wider text-white/80 hover:text-white"
+                  className="block py-1.5 text-xs font-mono uppercase tracking-wider text-white/80 hover:text-[#89d6e2]"
                 >
                   All Destinations (38 Trips)
                 </Link>
                 <Link
                   href="/treks"
                   onClick={() => setOpen(false)}
-                  className="block py-1.5 text-xs font-mono uppercase tracking-wider text-white/80 hover:text-white"
+                  className="block py-1.5 text-xs font-mono uppercase tracking-wider text-white/80 hover:text-[#89d6e2]"
                 >
                   Trek Profiles &amp; Elevation Charts
                 </Link>
                 <Link
                   href="/process"
                   onClick={() => setOpen(false)}
-                  className="block py-1.5 text-xs font-mono uppercase tracking-wider text-white/80 hover:text-white"
+                  className="block py-1.5 text-xs font-mono uppercase tracking-wider text-white/80 hover:text-[#89d6e2]"
                 >
                   Our Expedition Methodology
                 </Link>
@@ -1110,7 +1138,7 @@ export function Nav() {
                 href="https://wa.me/9779851058678"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-emerald-600/30 border border-emerald-500/50 text-emerald-300 font-mono text-xs font-bold"
+                className="mt-4 flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-emerald-600/30 border border-emerald-500/50 text-emerald-300 font-mono text-xs font-bold hover:bg-emerald-600/40 transition-colors"
               >
                 <PhoneCall className="w-3.5 h-3.5" />
                 <span>WhatsApp: +977 9851 058678 (24/7)</span>
@@ -1122,13 +1150,13 @@ export function Nav() {
 
       {/* ──────────────────────────────────────────────────────────
           6. INSTANT INTERACTIVE SEARCH MODAL
-          Triggered by Search icon in navigation
+          Triggered by Search icon in navigation (Alpine Teal Theme)
           ────────────────────────────────────────────────────────── */}
       {searchOpen && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 sm:pt-32 p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-150">
-          <div className="relative w-full max-w-2xl rounded-2xl border border-[#c59a4a]/50 bg-[#071317] p-6 shadow-2xl space-y-4">
-            <div className="flex items-center justify-between border-b border-white/10 pb-3">
-              <div className="flex items-center gap-2 text-white/50 text-xs font-mono uppercase tracking-wider">
+        <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 sm:pt-32 p-4 bg-[#00171c]/85 backdrop-blur-md animate-in fade-in duration-150">
+          <div className="relative w-full max-w-2xl rounded-2xl border border-[#006b78]/70 bg-gradient-to-b from-[#00282f] via-[#00363e] to-[#001f25] p-6 shadow-2xl space-y-4 ring-1 ring-[#89d6e2]/25">
+            <div className="flex items-center justify-between border-b border-[#006b78]/40 pb-3">
+              <div className="flex items-center gap-2 text-[#89d6e2] text-xs font-mono uppercase tracking-wider">
                 <Search className="w-4 h-4 text-[#e8b765]" />
                 <span>Quick Route Search</span>
               </div>
@@ -1150,13 +1178,13 @@ export function Nav() {
               placeholder="Search by peak, region or trek name (e.g. Everest, 6000m, Annapurna, Island Peak)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-[#0a1820] border border-white/15 focus:border-[#e8b765] rounded-xl px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition-colors"
+              className="w-full bg-[#001c21] border border-[#006b78]/60 focus:border-[#89d6e2] rounded-xl px-4 py-3 text-sm text-white placeholder-[#89d6e2]/40 outline-none transition-colors"
             />
 
             {searchQuery.trim() && (
-              <div className="max-h-72 overflow-y-auto space-y-2 pt-2 divide-y divide-white/5">
+              <div className="max-h-72 overflow-y-auto space-y-2 pt-2 divide-y divide-[#006b78]/30">
                 {filteredTrips.length === 0 ? (
-                  <p className="text-xs text-white/50 font-mono py-4 text-center">
+                  <p className="text-xs text-[#89d6e2]/60 font-mono py-4 text-center">
                     No matching expeditions found for &ldquo;{searchQuery}&rdquo;.
                   </p>
                 ) : (
@@ -1168,13 +1196,13 @@ export function Nav() {
                         setSearchOpen(false);
                         setSearchQuery("");
                       }}
-                      className="flex items-center justify-between p-2.5 rounded-lg hover:bg-white/5 transition-colors group cursor-pointer"
+                      className="flex items-center justify-between p-2.5 rounded-lg hover:bg-[#00515b]/35 border border-transparent hover:border-[#006b78]/40 transition-colors group cursor-pointer"
                     >
                       <div>
-                        <h4 className="font-serif text-sm text-white group-hover:text-[#e8b765]">
+                        <h4 className="font-serif text-sm text-white group-hover:text-[#89d6e2] transition-colors">
                           {trip.name}
                         </h4>
-                        <p className="text-[11px] font-mono text-white/50">
+                        <p className="text-[11px] font-mono text-[#89d6e2]/70">
                           {trip.area} · {trip.country.toUpperCase()}
                         </p>
                       </div>
@@ -1188,12 +1216,12 @@ export function Nav() {
               </div>
             )}
 
-            <div className="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-white/40">
+            <div className="pt-2 border-t border-[#006b78]/40 flex items-center justify-between text-[11px] font-mono text-white/50">
               <span>Press ESC or close button to exit</span>
               <Link
                 href="/destinations"
                 onClick={() => setSearchOpen(false)}
-                className="text-[#e8b765] hover:underline"
+                className="text-[#e8b765] hover:text-[#f4cb7d] hover:underline"
               >
                 Browse All 45 Expeditions &raquo;
               </Link>
