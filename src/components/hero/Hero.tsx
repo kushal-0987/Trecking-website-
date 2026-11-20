@@ -137,7 +137,7 @@ export function Hero() {
 
         {/* 2 — Giant wordmark, sitting *behind* the 3D ridges (Desktop) */}
         <div
-          className="pointer-events-none absolute inset-x-0 top-[9vh] hidden lg:flex justify-center"
+          className="pointer-events-none absolute inset-x-0 top-[16vh] hidden lg:flex justify-center"
           style={{
             transform:
               "translate3d(calc(var(--mx) * -8px), calc(var(--p) * -14vh), 0) scale(calc(1 + var(--p) * 0.5))",
@@ -198,7 +198,7 @@ export function Hero() {
 
         {/* 4 — Foreground interface */}
         <div
-          className="absolute inset-x-0 top-[70px] sm:top-[78px] lg:top-auto lg:bottom-[15vh] z-10 px-4 sm:px-6 md:px-12 max-h-[calc(100svh-125px)] lg:max-h-none overflow-y-auto lg:overflow-visible pb-8 lg:pb-0"
+          className="absolute inset-x-0 top-[84px] sm:top-[92px] lg:top-auto lg:bottom-[15vh] z-10 px-4 sm:px-6 md:px-12 max-h-[calc(100svh-125px)] lg:max-h-none overflow-y-auto lg:overflow-visible pb-8 lg:pb-0"
           style={{
             transform:
               "translate3d(calc(var(--mx) * 6px), calc(var(--p) * -22vh), 0)",

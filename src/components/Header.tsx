@@ -20,7 +20,7 @@ export default function Header() {
       </Suspense>
       {/* Spacer for non-hero content pages so the floating pill doesn't overlap top headings */}
       {!isHeroPage && (
-        <div className="h-20 sm:h-24 w-full shrink-0" aria-hidden="true" />
+        <div className="h-24 sm:h-28 w-full shrink-0" aria-hidden="true" />
       )}
     </>
   );
