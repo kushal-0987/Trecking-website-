@@ -38,23 +38,23 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="flex flex-col w-full bg-[#071116] text-white selection:bg-[#c9a46a] selection:text-white">
+    <div className="flex flex-col w-full bg-gradient-to-b from-[#002227] via-[#003840] to-[#001e23] text-white selection:bg-[#006b78] selection:text-white">
       {/* ──────────────────────────────────────────────────────────
-          1. EDITORIAL HERO SECTION
+          1. EDITORIAL HERO SECTION (Alpine Teal & Cyan Theme)
           ────────────────────────────────────────────────────────── */}
       <section
         id="overview"
-        className="relative w-full pt-16 sm:pt-24 pb-16 sm:pb-24 px-6 lg:px-12 overflow-hidden border-b border-[#c59a4a]/25"
+        className="relative w-full pt-16 sm:pt-24 pb-16 sm:pb-24 px-6 lg:px-12 overflow-hidden border-b border-[#006b78]/40"
       >
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
+          className="absolute inset-0 bg-cover bg-center opacity-25"
           style={{ backgroundImage: "url('/images/cta-himalaya-bg.jpg')" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#071116]/80 via-[#071116]/90 to-[#071116]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#002227]/85 via-[#003840]/90 to-[#002227]" />
 
         <div className="relative z-10 max-w-5xl mx-auto text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#c59a4a]/50 bg-[#0c1b22]/80 backdrop-blur-md text-[#e8b765] shadow-lg">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#c59a4a] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#006b78]/50 bg-[#002b33]/80 backdrop-blur-md text-[#89d6e2] shadow-lg">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#89d6e2] animate-pulse" />
             <span className="text-[11px] font-mono font-semibold uppercase tracking-[0.25em]">
               Brothers Holidays Adventure Pvt. Ltd. · Est. Kathmandu
             </span>
@@ -62,12 +62,12 @@ export default function AboutPage() {
 
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.05] tracking-tight text-white">
             Rooted in the high passes,{" "}
-            <em className="text-[#e8b765] font-serif not-italic">
+            <em className="text-[#89d6e2] font-serif not-italic">
               crafted for the silence.
             </em>
           </h1>
 
-          <p className="text-white/75 text-base sm:text-lg md:text-xl font-light max-w-3xl mx-auto leading-relaxed">
+          <p className="text-white/80 text-base sm:text-lg md:text-xl font-light max-w-3xl mx-auto leading-relaxed">
             BROTHERS Holidays Adventure is an indigenous, Sherpa-led Himalayan expedition
             and alpine trekking outfitter headquartered in Thamel, Kathmandu. We craft
             intimate, safe, and life-defining ascents across Nepal, Tibet, and Bhutan.
@@ -76,7 +76,7 @@ export default function AboutPage() {
           <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/destinations"
-              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#e8b765] via-[#dfa851] to-[#c59a4a] text-[#071317] font-semibold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:brightness-110 active:scale-95 transition-all flex items-center gap-2 cursor-pointer"
+              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#e8b765] via-[#dfa851] to-[#c59a4a] text-[#002228] font-semibold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:brightness-110 active:scale-95 transition-all flex items-center gap-2 cursor-pointer"
             >
               Explore Our Expeditions
               <ArrowRight className="w-4 h-4" />
@@ -85,9 +85,9 @@ export default function AboutPage() {
               href="https://wa.me/9779851058678"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3.5 rounded-full border border-[#c59a4a]/60 bg-[#0c1b22]/70 hover:bg-[#0c1b22] text-white font-medium text-xs sm:text-sm uppercase tracking-wider backdrop-blur-md transition-all flex items-center gap-2 cursor-pointer"
+              className="px-8 py-3.5 rounded-full border border-[#006b78]/60 bg-[#002b33]/70 hover:bg-[#003840] text-white font-medium text-xs sm:text-sm uppercase tracking-wider backdrop-blur-md transition-all flex items-center gap-2 cursor-pointer shadow-sm"
             >
-              <PhoneCall className="w-4 h-4 text-[#e8b765]" />
+              <PhoneCall className="w-4 h-4 text-[#89d6e2]" />
               Talk With a Lead Guide (24/7)
             </a>
           </div>
@@ -98,7 +98,7 @@ export default function AboutPage() {
           2. STICKY IN-PAGE FEATURE JUMP NAVIGATION
           Allows instant jumping between requested About Us sub-features
           ────────────────────────────────────────────────────────── */}
-      <nav aria-label="About Sections" className="sticky top-20 z-30 w-full bg-[#050c0e]/90 backdrop-blur-xl border-b border-[#c59a4a]/25 py-2.5 px-4 overflow-x-auto shadow-md">
+      <nav aria-label="About Sections" className="sticky top-20 z-30 w-full bg-[#00242b]/95 backdrop-blur-xl border-b border-[#006b78]/40 py-2.5 px-4 overflow-x-auto shadow-md">
         <div className="max-w-6xl mx-auto flex items-center justify-center gap-2 sm:gap-4 min-w-max">
           {ABOUT_TABS.map((tab) => (
             <button
@@ -106,8 +106,8 @@ export default function AboutPage() {
               onClick={() => scrollTo(tab.id)}
               className={`px-3.5 py-1.5 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                 activeTab === tab.id
-                  ? "bg-[#e8b765] text-[#071317] font-bold shadow-md ring-1 ring-[#e8b765]"
-                  : "text-white/70 hover:text-white hover:bg-white/5"
+                  ? "bg-[#00515b] text-[#89d6e2] font-bold shadow-md ring-1 ring-[#89d6e2]/40"
+                  : "text-white/70 hover:text-[#89d6e2] hover:bg-white/5"
               }`}
             >
               {tab.label}
@@ -129,13 +129,13 @@ export default function AboutPage() {
       <section className="relative w-full py-16 sm:py-24 px-6 lg:px-12 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="space-y-6">
-            <span className="text-[11px] font-mono font-semibold uppercase tracking-[0.25em] text-[#e8b765]">
+            <span className="text-[11px] font-mono font-semibold uppercase tracking-[0.25em] text-[#89d6e2]">
               Chapter I · The Brothers Ethos
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-white font-normal leading-tight">
               A refusal to turn sacred Himalayan peaks into crowded tourist conveyor belts.
             </h2>
-            <div className="space-y-4 text-white/75 text-sm sm:text-base leading-relaxed font-light">
+            <div className="space-y-4 text-white/80 text-sm sm:text-base leading-relaxed font-light">
               <p>
                 Founded in Thamel, Kathmandu, BROTHERS Holidays Adventure grew from
                 decades of high-altitude rope-fixing, high-pass guiding, and deep
@@ -154,9 +154,9 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="pt-4 grid grid-cols-3 gap-4 border-t border-white/10">
+            <div className="pt-4 grid grid-cols-3 gap-4 border-t border-[#006b78]/30">
               <div>
-                <span className="font-serif text-2xl sm:text-3xl text-[#e8b765] block font-normal">
+                <span className="font-serif text-2xl sm:text-3xl text-[#89d6e2] block font-normal">
                   10+
                 </span>
                 <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-white/50">
@@ -164,7 +164,7 @@ export default function AboutPage() {
                 </span>
               </div>
               <div>
-                <span className="font-serif text-2xl sm:text-3xl text-[#e8b765] block font-normal">
+                <span className="font-serif text-2xl sm:text-3xl text-[#89d6e2] block font-normal">
                   100%
                 </span>
                 <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-white/50">
@@ -172,7 +172,7 @@ export default function AboutPage() {
                 </span>
               </div>
               <div>
-                <span className="font-serif text-2xl sm:text-3xl text-[#e8b765] block font-normal">
+                <span className="font-serif text-2xl sm:text-3xl text-[#89d6e2] block font-normal">
                   8,848m
                 </span>
                 <span className="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-white/50">
@@ -182,8 +182,8 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="relative rounded-2xl border border-[#c59a4a]/40 bg-[#0a171d]/90 p-8 shadow-2xl backdrop-blur-xl space-y-6">
-            <div className="w-12 h-12 rounded-xl bg-[#c59a4a]/15 border border-[#c59a4a]/30 flex items-center justify-center text-[#e8b765]">
+          <div className="relative rounded-2xl border border-[#006b78]/50 bg-gradient-to-br from-[#00282f]/90 via-[#00353d]/85 to-[#002026]/90 p-8 shadow-2xl backdrop-blur-xl space-y-6">
+            <div className="w-12 h-12 rounded-xl bg-[#00515b]/50 border border-[#89d6e2]/30 flex items-center justify-center text-[#89d6e2]">
               <Compass className="w-6 h-6" />
             </div>
 
@@ -211,12 +211,12 @@ export default function AboutPage() {
                 },
               ].map((item) => (
                 <li key={item.title} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-[#c59a4a] shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-5 h-5 text-[#89d6e2] shrink-0 mt-0.5" />
                   <div>
                     <h4 className="text-sm font-semibold text-white">
                       {item.title}
                     </h4>
-                    <p className="text-xs text-white/60 leading-relaxed mt-0.5">
+                    <p className="text-xs text-white/65 leading-relaxed mt-0.5">
                       {item.desc}
                     </p>
                   </div>
@@ -233,18 +233,18 @@ export default function AboutPage() {
           ────────────────────────────────────────────────────────── */}
       <section
         id="our-team"
-        className="relative w-full py-20 px-6 lg:px-12 bg-[#050c0e] border-y border-[#c59a4a]/25 scroll-mt-28"
+        className="relative w-full py-20 px-6 lg:px-12 bg-gradient-to-b from-[#002025] via-[#002c34] to-[#002025] border-y border-[#006b78]/40 scroll-mt-28"
       >
         <div className="max-w-7xl mx-auto space-y-12">
           <div className="text-center space-y-3 max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#c59a4a]/15 border border-[#c59a4a]/30 text-[#e8b765] text-xs font-mono uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00515b]/40 border border-[#006b78]/50 text-[#89d6e2] text-xs font-mono uppercase tracking-wider">
               <Users className="w-3.5 h-3.5" />
               <span>Elite Sherpa Mountaineers &amp; Management</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl text-white font-normal">
               Meet Our Team
             </h2>
-            <p className="text-white/65 text-sm sm:text-base leading-relaxed">
+            <p className="text-white/70 text-sm sm:text-base leading-relaxed">
               We do not subcontract freelance guides. Our expeditions are personally
               led by certified IFMGA / NMA mountain sardars and high-altitude wilderness
               logistics professionals with decades on the world&apos;s highest ridges.
@@ -288,22 +288,22 @@ export default function AboutPage() {
             ].map((member) => (
               <div
                 key={member.name}
-                className="group rounded-2xl border border-white/10 bg-[#09171e]/90 p-6 flex flex-col justify-between space-y-4 hover:border-[#c59a4a]/60 hover:shadow-[0_10px_30px_rgba(197,154,74,0.15)] transition-all duration-300"
+                className="group rounded-2xl border border-[#006b78]/40 bg-[#00242a]/70 p-6 flex flex-col justify-between space-y-4 hover:border-[#89d6e2]/60 hover:bg-[#003840]/80 hover:shadow-[0_10px_30px_rgba(137,214,226,0.15)] transition-all duration-300"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-full bg-[#c59a4a]/20 border border-[#c59a4a]/40 flex items-center justify-center text-[#e8b765] font-serif text-lg font-bold group-hover:scale-105 transition-transform">
+                    <div className="w-12 h-12 rounded-full bg-[#00515b]/50 border border-[#89d6e2]/35 flex items-center justify-center text-[#89d6e2] font-serif text-lg font-bold group-hover:scale-105 transition-transform">
                       {member.name[0]}
                     </div>
-                    <span className="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-white/5 text-[#89d6e2] border border-white/10">
+                    <span className="font-mono text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-white/5 text-[#89d6e2] border border-[#006b78]/40">
                       {member.stat}
                     </span>
                   </div>
                   <div>
-                    <h3 className="font-serif text-xl text-white group-hover:text-[#e8b765] transition-colors">
+                    <h3 className="font-serif text-xl text-white group-hover:text-[#89d6e2] transition-colors">
                       {member.name}
                     </h3>
-                    <p className="text-xs font-mono text-[#e8b765] mt-0.5 font-semibold">
+                    <p className="text-xs font-mono text-[#89d6e2] mt-0.5 font-semibold">
                       {member.role}
                     </p>
                     <p className="text-[11px] text-white/50 font-mono mt-1">
@@ -314,7 +314,7 @@ export default function AboutPage() {
                     {member.desc}
                   </p>
                 </div>
-                <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-white/40">
+                <div className="pt-3 border-t border-[#006b78]/30 flex items-center justify-between text-[11px] font-mono text-white/40">
                   <span>Brothers Core Crew</span>
                   <span className="text-[#e8b765]">Certified</span>
                 </div>
@@ -333,14 +333,14 @@ export default function AboutPage() {
         className="relative w-full py-20 px-6 lg:px-12 max-w-7xl mx-auto space-y-14 scroll-mt-28"
       >
         <div className="text-center space-y-3 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#c59a4a]/15 border border-[#c59a4a]/30 text-[#e8b765] text-xs font-mono uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00515b]/40 border border-[#006b78]/50 text-[#89d6e2] text-xs font-mono uppercase tracking-wider">
             <Award className="w-3.5 h-3.5" />
             <span>The Brothers Standard</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl text-white font-normal">
             Why Travel With Us?
           </h2>
-          <p className="text-white/65 text-sm sm:text-base leading-relaxed">
+          <p className="text-white/70 text-sm sm:text-base leading-relaxed">
             Himalayan trekking is not merely a scenic vacation—it requires absolute
             technical precision, deep cultural respect, and unquestioned safety protocols.
           </p>
@@ -383,13 +383,13 @@ export default function AboutPage() {
             return (
               <div
                 key={pillar.title}
-                className="rounded-2xl border border-white/10 bg-[#09151b]/80 p-7 space-y-4 hover:border-[#c59a4a]/40 transition-colors"
+                className="rounded-2xl border border-[#006b78]/40 bg-[#00242b]/70 p-7 space-y-4 hover:border-[#89d6e2]/60 hover:bg-[#003840]/80 transition-all shadow-lg"
               >
-                <div className="w-12 h-12 rounded-xl bg-[#c59a4a]/15 border border-[#c59a4a]/30 flex items-center justify-center text-[#e8b765]">
+                <div className="w-12 h-12 rounded-xl bg-[#00515b]/50 border border-[#89d6e2]/30 flex items-center justify-center text-[#89d6e2]">
                   <Icon className="w-6 h-6" />
                 </div>
                 <h3 className="font-serif text-xl text-white">{pillar.title}</h3>
-                <p className="text-xs sm:text-sm text-white/65 leading-relaxed font-light">
+                <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light">
                   {pillar.desc}
                 </p>
               </div>
@@ -398,43 +398,43 @@ export default function AboutPage() {
         </div>
 
         {/* Comparison Table: Standard vs Brothers */}
-        <div className="mt-12 rounded-2xl border border-[#c59a4a]/30 bg-[#061014]/90 p-6 sm:p-8 overflow-x-auto shadow-2xl">
+        <div className="mt-12 rounded-2xl border border-[#006b78]/50 bg-gradient-to-b from-[#00282f] to-[#001e23] p-6 sm:p-8 overflow-x-auto shadow-2xl">
           <h3 className="font-serif text-2xl text-white mb-6 text-center">
             How Brothers Compares to Budget Mass Operators
           </h3>
           <table className="w-full text-left text-xs sm:text-sm">
             <thead>
-              <tr className="border-b border-white/15 text-white/50 font-mono text-[11px] uppercase tracking-wider">
+              <tr className="border-b border-[#006b78]/40 text-white/50 font-mono text-[11px] uppercase tracking-wider">
                 <th className="pb-3 font-semibold">Expedition Aspect</th>
                 <th className="pb-3 font-semibold text-rose-400">Budget / Mass Operators</th>
-                <th className="pb-3 font-semibold text-[#e8b765]">BROTHERS Holidays Adventure</th>
+                <th className="pb-3 font-semibold text-[#89d6e2]">BROTHERS Holidays Adventure</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/10 text-white/80">
+            <tbody className="divide-y divide-[#006b78]/30 text-white/80">
               <tr>
                 <td className="py-3 font-medium text-white">Group Size &amp; Guide Ratio</td>
                 <td className="py-3 text-white/60">1 guide per 15–20 trekkers</td>
-                <td className="py-3 text-[#e8b765] font-semibold">Strict 1:6 maximum guest ratio</td>
+                <td className="py-3 text-[#89d6e2] font-semibold">Strict 1:6 maximum guest ratio</td>
               </tr>
               <tr>
                 <td className="py-3 font-medium text-white">Porter Welfare Code</td>
                 <td className="py-3 text-white/60">35kg+ loads, basic cotton clothing</td>
-                <td className="py-3 text-[#e8b765] font-semibold">25kg strict limit, warm mountain gear &amp; insurance</td>
+                <td className="py-3 text-[#89d6e2] font-semibold">25kg strict limit, warm mountain gear &amp; insurance</td>
               </tr>
               <tr>
                 <td className="py-3 font-medium text-white">Emergency Communication</td>
                 <td className="py-3 text-white/60">Mobile phone only (zero signal on high passes)</td>
-                <td className="py-3 text-[#e8b765] font-semibold">Garmin inReach Satellite SOS on every departure</td>
+                <td className="py-3 text-[#89d6e2] font-semibold">Garmin inReach Satellite SOS on every departure</td>
               </tr>
               <tr>
                 <td className="py-3 font-medium text-white">Acclimatization Policy</td>
                 <td className="py-3 text-white/60">Rushed 10-12 day EBC itineraries</td>
-                <td className="py-3 text-[#e8b765] font-semibold">UIAA medically backed 14-16 day schedules</td>
+                <td className="py-3 text-[#89d6e2] font-semibold">UIAA medically backed 14-16 day schedules</td>
               </tr>
               <tr>
                 <td className="py-3 font-medium text-white">Legal Protection</td>
                 <td className="py-3 text-white/60">Subcontracted freelancers</td>
-                <td className="py-3 text-[#e8b765] font-semibold">100% Nepal Tourism Board &amp; TAAN Bonded</td>
+                <td className="py-3 text-[#89d6e2] font-semibold">100% Nepal Tourism Board &amp; TAAN Bonded</td>
               </tr>
             </tbody>
           </table>
@@ -447,18 +447,18 @@ export default function AboutPage() {
           ────────────────────────────────────────────────────────── */}
       <section
         id="responsible-travel"
-        className="relative w-full py-20 px-6 lg:px-12 bg-[#050d11] border-y border-[#c59a4a]/25 scroll-mt-28"
+        className="relative w-full py-20 px-6 lg:px-12 bg-gradient-to-b from-[#002025] via-[#002a32] to-[#002025] border-y border-[#006b78]/40 scroll-mt-28"
       >
         <div className="max-w-7xl mx-auto space-y-12">
           <div className="text-center space-y-3 max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#c59a4a]/15 border border-[#c59a4a]/30 text-[#e8b765] text-xs font-mono uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00515b]/40 border border-[#006b78]/50 text-[#89d6e2] text-xs font-mono uppercase tracking-wider">
               <HeartHandshake className="w-3.5 h-3.5" />
               <span>Ethical High-Altitude Tourism</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl text-white font-normal">
               Responsible Travel &amp; Porter Welfare
             </h2>
-            <p className="text-white/65 text-sm sm:text-base leading-relaxed">
+            <p className="text-white/70 text-sm sm:text-base leading-relaxed">
               The Himalayas are sacred homelands, not sports stadiums. We believe
               true luxury lies in deep integrity—ensuring that every porter, teahouse family,
               and alpine ecosystem is protected for generations.
@@ -466,8 +466,8 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="rounded-2xl border border-white/10 bg-[#09171e]/90 p-8 space-y-4">
-              <span className="font-mono text-xs text-[#e8b765] uppercase tracking-wider block">
+            <div className="rounded-2xl border border-[#006b78]/40 bg-[#00242b]/70 p-8 space-y-4 shadow-lg hover:border-[#89d6e2]/50 hover:bg-[#00353d]/80 transition-all">
+              <span className="font-mono text-xs text-[#89d6e2] uppercase tracking-wider block font-semibold">
                 Pillar I · Porter Protection
               </span>
               <h3 className="font-serif text-2xl text-white font-normal">
@@ -478,26 +478,26 @@ export default function AboutPage() {
               </p>
               <ul className="space-y-2 text-xs text-white/80">
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#e8b765] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#89d6e2] shrink-0" />
                   <span>Strict 25 kg load limit per porter</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#e8b765] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#89d6e2] shrink-0" />
                   <span>30% above industry standard living wage</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#e8b765] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#89d6e2] shrink-0" />
                   <span>Warm high-altitude boots, jackets &amp; sunglasses</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#e8b765] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#89d6e2] shrink-0" />
                   <span>Full medical evacuation insurance covering up to $10,000</span>
                 </li>
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#09171e]/90 p-8 space-y-4">
-              <span className="font-mono text-xs text-[#e8b765] uppercase tracking-wider block">
+            <div className="rounded-2xl border border-[#006b78]/40 bg-[#00242b]/70 p-8 space-y-4 shadow-lg hover:border-[#89d6e2]/50 hover:bg-[#00353d]/80 transition-all">
+              <span className="font-mono text-xs text-[#89d6e2] uppercase tracking-wider block font-semibold">
                 Pillar II · Environmental Care
               </span>
               <h3 className="font-serif text-2xl text-white font-normal">
@@ -508,26 +508,26 @@ export default function AboutPage() {
               </p>
               <ul className="space-y-2 text-xs text-white/80">
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#e8b765] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#89d6e2] shrink-0" />
                   <span>Zero single-use plastic water bottles on guided treks</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#e8b765] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#89d6e2] shrink-0" />
                   <span>Pack-out 100% of non-biodegradable expedition trash</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#e8b765] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#89d6e2] shrink-0" />
                   <span>Solar-powered charging &amp; renewable teahouse partners</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#e8b765] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#89d6e2] shrink-0" />
                   <span>Annual volunteer clean-up on Khumbu &amp; Annapurna trails</span>
                 </li>
               </ul>
             </div>
 
-            <div className="rounded-2xl border border-white/10 bg-[#09171e]/90 p-8 space-y-4">
-              <span className="font-mono text-xs text-[#e8b765] uppercase tracking-wider block">
+            <div className="rounded-2xl border border-[#006b78]/40 bg-[#00242b]/70 p-8 space-y-4 shadow-lg hover:border-[#89d6e2]/50 hover:bg-[#00353d]/80 transition-all">
+              <span className="font-mono text-xs text-[#89d6e2] uppercase tracking-wider block font-semibold">
                 Pillar III · Community Return
               </span>
               <h3 className="font-serif text-2xl text-white font-normal">
@@ -538,19 +538,19 @@ export default function AboutPage() {
               </p>
               <ul className="space-y-2 text-xs text-white/80">
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#e8b765] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#89d6e2] shrink-0" />
                   <span>5% of annual profits support Solukhumbu school libraries</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#e8b765] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#89d6e2] shrink-0" />
                   <span>Porter children educational scholarship sponsorships</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#e8b765] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#89d6e2] shrink-0" />
                   <span>Direct purchasing of local produce and valley supplies</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#e8b765] shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#89d6e2] shrink-0" />
                   <span>Free wilderness first-aid training for rural villagers</span>
                 </li>
               </ul>
@@ -569,14 +569,14 @@ export default function AboutPage() {
         className="relative w-full py-20 px-6 lg:px-12 max-w-7xl mx-auto space-y-12 scroll-mt-28"
       >
         <div className="text-center space-y-3 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#c59a4a]/15 border border-[#c59a4a]/30 text-[#e8b765] text-xs font-mono uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00515b]/40 border border-[#006b78]/50 text-[#89d6e2] text-xs font-mono uppercase tracking-wider">
             <FileText className="w-3.5 h-3.5" />
             <span>Government Verified &amp; Bonded</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl text-white font-normal">
             Legal Documents – Brothers Holidays Adventure Pvt. Ltd.
           </h2>
-          <p className="text-white/65 text-sm sm:text-base leading-relaxed">
+          <p className="text-white/70 text-sm sm:text-base leading-relaxed">
             Brothers Holidays Adventure Pvt. Ltd. is a fully registered, government-authorized,
             and financially bonded adventure travel company operating under the laws of
             the Government of Nepal.
@@ -630,14 +630,14 @@ export default function AboutPage() {
           ].map((doc) => (
             <div
               key={doc.title}
-              className="rounded-2xl border border-white/10 bg-[#09151b]/90 p-6 flex flex-col justify-between space-y-4 hover:border-[#c59a4a]/50 transition-colors shadow-lg"
+              className="rounded-2xl border border-[#006b78]/40 bg-[#00242b]/70 p-6 flex flex-col justify-between space-y-4 hover:border-[#89d6e2]/60 hover:bg-[#00363f]/80 transition-all shadow-lg"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-[11px] text-[#e8b765] font-semibold px-2.5 py-1 rounded bg-[#c59a4a]/15 border border-[#c59a4a]/30">
+                  <span className="font-mono text-[11px] text-[#89d6e2] font-semibold px-2.5 py-1 rounded bg-[#00515b]/40 border border-[#89d6e2]/30">
                     {doc.number}
                   </span>
-                  <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                  <span className="text-[10px] font-mono text-emerald-300 bg-emerald-500/15 px-2 py-0.5 rounded border border-emerald-500/30">
                     {doc.status}
                   </span>
                 </div>
@@ -652,7 +652,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] text-[#e8b765]">
+              <div className="pt-3 border-t border-[#006b78]/30 flex items-center justify-between text-[11px] text-[#e8b765]">
                 <span className="font-mono">PAN / VAT: 600584712</span>
                 <span className="text-white/40">Govt. Bonded</span>
               </div>
@@ -660,8 +660,8 @@ export default function AboutPage() {
           ))}
         </div>
 
-        <div className="rounded-2xl border border-[#c59a4a]/40 bg-gradient-to-r from-[#0d1d24] via-[#09151b] to-[#0d1d24] p-8 text-center space-y-3">
-          <ShieldCheck className="w-8 h-8 text-[#e8b765] mx-auto" />
+        <div className="rounded-2xl border border-[#006b78]/50 bg-gradient-to-r from-[#002b33] via-[#003840] to-[#002b33] p-8 text-center space-y-3 shadow-2xl">
+          <ShieldCheck className="w-8 h-8 text-[#89d6e2] mx-auto" />
           <h3 className="font-serif text-2xl text-white">
             100% Financial Security &amp; Deposit Bond
           </h3>
@@ -676,7 +676,7 @@ export default function AboutPage() {
       {/* ──────────────────────────────────────────────────────────
           8. CLOSING CTA BANNER
           ────────────────────────────────────────────────────────── */}
-      <section className="relative w-full py-20 px-6 lg:px-12 bg-gradient-to-r from-[#0c222c] via-[#07171e] to-[#0c222c] border-t border-[#c59a4a]/30">
+      <section className="relative w-full py-20 px-6 lg:px-12 bg-gradient-to-b from-[#003840] via-[#002b33] to-[#001f25] border-t border-[#006b78]/50 shadow-inner">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h2 className="font-serif text-3xl sm:text-5xl text-white font-normal">
             Begin Your Himalayan Expedition
@@ -689,13 +689,13 @@ export default function AboutPage() {
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <Link
               href="/destinations"
-              className="px-8 py-3.5 rounded-full bg-[#c59a4a] hover:bg-[#d8ab58] text-[#071317] font-semibold text-xs uppercase tracking-wider transition-all shadow-lg"
+              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#e8b765] via-[#dfa851] to-[#c59a4a] text-[#002228] font-semibold text-xs uppercase tracking-wider transition-all shadow-lg hover:brightness-110 active:scale-95"
             >
               Browse All Treks &amp; Peaks
             </Link>
             <Link
               href="/contact"
-              className="px-8 py-3.5 rounded-full border border-white/25 hover:border-white text-white font-medium text-xs uppercase tracking-wider transition-all"
+              className="px-8 py-3.5 rounded-full border border-[#006b78]/60 hover:border-[#89d6e2] bg-[#00252b]/50 hover:bg-[#003840] text-white font-medium text-xs uppercase tracking-wider transition-all"
             >
               Contact Head Office (Kathmandu)
             </Link>

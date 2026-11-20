@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  ArrowRight,
   ArrowUpRight,
   ChevronDown,
   Menu,
@@ -529,7 +530,11 @@ export function Nav() {
               onMouseEnter={() => {
                 if (closeTimer.current) window.clearTimeout(closeTimer.current);
               }}
-              className="hidden xl:block mt-2 rounded-2xl border border-[#006b78]/60 bg-gradient-to-b from-[#002a31]/98 via-[#003840]/96 to-[#002227]/98 shadow-[0_24px_64px_rgba(0,20,25,0.85)] backdrop-blur-2xl p-6 ring-1 ring-[#89d6e2]/20 animate-in fade-in slide-in-from-top-2 duration-200"
+              className={`hidden xl:block mt-2 rounded-2xl backdrop-blur-2xl p-6 animate-in fade-in slide-in-from-top-2 duration-200 ${
+                PEAK_TIERS.some((t) => t.id === activeDropdown)
+                  ? "border border-[#1e4e37]/80 bg-gradient-to-b from-[#062016]/98 via-[#092b1e]/98 to-[#051710]/98 shadow-[0_24px_64px_rgba(5,25,18,0.9)] ring-1 ring-[#55c024]/20"
+                  : "border border-[#006b78]/60 bg-gradient-to-b from-[#002a31]/98 via-[#003840]/96 to-[#002227]/98 shadow-[0_24px_64px_rgba(0,20,25,0.85)] ring-1 ring-[#89d6e2]/20"
+              }`}
             >
               {/* NEPAL DROPDOWN */}
               {activeDropdown === "nepal" && (
@@ -877,80 +882,88 @@ export function Nav() {
                 </div>
               )}
 
-              {/* PEAK TIERS DROPDOWNS — Image Cards Design (Reference: Popular Destinations) */}
+              {/* PEAK TIERS DROPDOWNS — Image Cards Design (Exact Reference Match: Photo on Left) */}
               {PEAK_TIERS.some((t) => t.id === activeDropdown) && (
                 <div>
                   {(() => {
                     const tier = PEAK_TIERS.find((t) => t.id === activeDropdown)!;
                     return (
-                      <div className="space-y-5">
-                        {/* Header: "Explore Our Treks / Popular Destinations" style */}
-                        <div className="flex items-center justify-between">
+                      <div className="space-y-6">
+                        {/* Header: "EXPLORE OUR TREKS / Popular Destinations" */}
+                        <div className="flex items-end justify-between pb-1">
                           <div>
-                            <div className="flex items-center gap-2 mb-1">
-                              <Mountain className="w-4 h-4 text-[#89d6e2]" />
-                              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-[#89d6e2]/80 font-semibold">
+                            <div className="flex items-center gap-2 mb-1.5">
+                              <span className="w-5 h-px bg-[#e8b765]" />
+                              <Mountain className="w-3.5 h-3.5 text-[#e8b765]" />
+                              <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#e8b765] font-semibold">
                                 Explore Our Treks
                               </span>
                             </div>
-                            <h3 className="font-serif text-xl text-white leading-snug">
+                            <h3 className="font-serif text-2xl sm:text-3xl text-white leading-tight">
                               Popular{" "}
-                              <em className="text-[#e8b765] not-italic font-semibold">Destinations</em>
+                              <em className="text-[#85e043] italic font-serif font-normal">
+                                Destinations
+                              </em>
                             </h3>
-                            <p className="text-[11px] text-white/60 font-mono mt-0.5">
-                              {tier.label} · {tier.range}
+                            <p className="text-xs text-white/70 font-light mt-1">
+                              Discover breathtaking peaks and unforgettable journeys.
                             </p>
                           </div>
                           <Link
                             href="/destinations?category=peak-climbing"
                             onClick={() => setActiveDropdown(null)}
-                            className="font-mono text-xs uppercase text-[#e8b765] hover:text-[#f4cb7d] hover:underline flex items-center gap-1 whitespace-nowrap"
+                            className="group flex items-center gap-1.5 font-mono text-xs uppercase tracking-wider text-[#e8b765] hover:text-[#f4cb7d] whitespace-nowrap pb-1"
                           >
-                            All Climbing Expeditions <ArrowUpRight className="w-3.5 h-3.5" />
+                            <span>All Climbing Expeditions</span>
+                            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                           </Link>
                         </div>
 
-                        {/* Peak Cards with Images */}
-                        <div className="grid grid-cols-3 gap-4">
+                        {/* Peak Cards Grid (3 Columns, Small Photo on Left Side) */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                           {tier.peaks.map((peak) => (
                             <Link
                               key={peak.name}
                               href={`/destinations/${peak.slug}`}
                               onClick={() => setActiveDropdown(null)}
-                              className="group rounded-xl border border-[#2a5e3a]/50 bg-gradient-to-br from-[#0c2a15]/80 to-[#0a1f10]/80 hover:border-[#55c024]/60 hover:shadow-[0_6px_24px_rgba(85,192,36,0.2)] p-0 transition-all duration-300 block overflow-hidden"
+                              className="group rounded-2xl border border-[#1b4332]/85 bg-gradient-to-r from-[#072418]/90 via-[#0a2e20]/85 to-[#072418]/90 hover:border-[#40916c] hover:bg-[#0d3826] p-3 flex items-center gap-3.5 transition-all duration-300 shadow-lg hover:shadow-[0_8px_24px_rgba(40,116,70,0.25)] cursor-pointer"
                             >
-                              {/* Image Section */}
-                              <div className="relative h-28 w-full overflow-hidden">
+                              {/* Small Photo on Left Side */}
+                              <div className="w-20 h-20 sm:w-22 sm:h-22 rounded-xl overflow-hidden shrink-0 relative shadow-md border border-white/10 bg-black/40">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                   src={peak.image}
                                   alt={peak.name}
-                                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1f10]/90 via-[#0a1f10]/30 to-transparent" />
-                                {/* Duration & Altitude Badges over image */}
-                                <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between">
-                                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#1b3d1f]/90 border border-[#55c024]/40 text-[10px] font-mono font-bold text-white backdrop-blur-sm">
-                                    <Mountain className="w-2.5 h-2.5 text-[#7ce63a]" />
-                                    {peak.days}
+                              </div>
+
+                              {/* Destination Info on Right Side */}
+                              <div className="flex-1 flex flex-col justify-between h-full min-w-0 py-0.5">
+                                {/* Top Row: Days Badge & Altitude Pill */}
+                                <div className="flex items-center justify-between gap-2">
+                                  <span className="inline-flex items-center gap-1.5 text-xs font-mono text-white/90">
+                                    <Mountain className="w-3 h-3 text-[#e8b765]" />
+                                    <span>{peak.days}</span>
                                   </span>
-                                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-[#55c024]/25 border border-[#55c024]/50 text-[10px] font-mono font-bold text-[#7ce63a] backdrop-blur-sm">
+                                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#184d28] border border-[#2d6a4f] text-[11px] font-mono font-bold text-[#74c69d]">
                                     <Mountain className="w-2.5 h-2.5" />
-                                    {peak.altitude}
+                                    <span>{peak.altitude}</span>
                                   </span>
                                 </div>
-                              </div>
-                              {/* Text Section */}
-                              <div className="p-3.5 space-y-1.5">
-                                <h4 className="font-serif text-sm text-white group-hover:text-[#7ce63a] transition-colors leading-snug">
+
+                                {/* Middle Row: Destination Name */}
+                                <h4 className="font-serif text-sm sm:text-base font-semibold text-white group-hover:text-[#85e043] transition-colors leading-tight truncate mt-1">
                                   {peak.name}
                                 </h4>
-                                <p className="text-[11px] text-white/65 leading-relaxed font-light line-clamp-2">
-                                  {peak.highlight}
-                                </p>
-                                <div className="flex items-center justify-end pt-1">
-                                  <span className="w-6 h-6 rounded-full bg-[#55c024]/20 border border-[#55c024]/40 flex items-center justify-center group-hover:bg-[#55c024] group-hover:border-[#7ce63a] transition-all">
-                                    <ArrowUpRight className="w-3 h-3 text-[#7ce63a] group-hover:text-white transition-colors" />
+
+                                {/* Bottom Row: Summary & Circle Arrow Button */}
+                                <div className="flex items-center justify-between gap-2 mt-1.5">
+                                  <p className="text-[11px] text-white/65 font-light line-clamp-1 flex-1 leading-snug">
+                                    {peak.highlight}
+                                  </p>
+                                  <span className="w-6 h-6 rounded-full border border-[#2d6a4f] bg-[#164329]/60 flex items-center justify-center shrink-0 text-[#74c69d] group-hover:bg-[#2d6a4f] group-hover:text-white transition-all">
+                                    <ArrowRight className="w-3.5 h-3.5" />
                                   </span>
                                 </div>
                               </div>
@@ -958,12 +971,15 @@ export function Nav() {
                           ))}
                         </div>
 
-                        {/* Bottom: Trek · Explore · Discover */}
-                        <div className="flex items-center gap-3 pt-1 border-t border-[#2a5e3a]/30">
-                          <Mountain className="w-4 h-4 text-[#e8b765]" />
-                          <span className="font-mono text-[10px] uppercase tracking-[0.4em] text-[#e8b765]/70 font-bold">
-                            Trek · Explore · Discover
-                          </span>
+                        {/* Bottom: Trek · Explore · Discover with Gold Line Divider */}
+                        <div className="flex items-center gap-4 pt-3 border-t border-[#1e4836]/50">
+                          <div className="flex items-center gap-2 shrink-0">
+                            <Mountain className="w-4 h-4 text-[#e8b765]" />
+                            <span className="font-mono text-[10px] uppercase tracking-[0.35em] text-[#e8b765] font-bold">
+                              Trek · Explore · Discover
+                            </span>
+                          </div>
+                          <div className="h-px bg-gradient-to-r from-[#e8b765]/80 via-[#e8b765]/30 to-transparent flex-1" />
                         </div>
                       </div>
                     );
